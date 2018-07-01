@@ -1,0 +1,84 @@
+{% include "header.html" %}
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Routes</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                              All active routes
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Host</th>
+                                                <th>Application</th>
+                                                <th>Controller</th>
+                                                <th>Function</th>
+                                                <th>Route</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                          {% for host, routelist in routes %}
+                                          {% for route in routelist%}
+                                          <tr>
+                                            <td>{{host}}</td>
+                                            <td>{{route.app}}</td>
+                                            <td>{{route.mod}}</td>
+                                            <td>{{route.func}}</td>
+                                            <td>{{route.route}}</td>
+                                          </tr>
+                                          {% endfor %}
+                                          {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="/admin/assets/js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/admin/assets/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="/admin/assets/js/metisMenu.min.js"></script>
+
+        <!-- DataTables JavaScript -->
+        <script src="/admin/assets/js/dataTables/jquery.dataTables.min.js"></script>
+        <script src="/admin/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/admin/assets/js/startmin.js"></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable({
+                        responsive: true
+                });
+            });
+        </script>
+
+    </body>
+</html>

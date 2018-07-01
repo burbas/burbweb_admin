@@ -1,0 +1,28 @@
+{application, burbweb_admin,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { burbweb_admin_app, []}},
+  {included_applications, [
+                           burbweb
+                          ]},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[
+        {burbweb_applications, [
+                                #{
+                                   name => burbweb_admin,
+                                   prefix => "/admin",
+                                   routes_file => "priv/burbweb_admin.routes.erl"
+                                 }
+                               ]}
+
+       ]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
