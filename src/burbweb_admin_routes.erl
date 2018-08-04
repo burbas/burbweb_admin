@@ -7,14 +7,10 @@
 
 -module(burbweb_admin_routes).
 -export([
-         init/0,
-         list/3
+         list/1
         ]).
 
-init() -> html.
-
-
-list(<<"GET">>, _Path, _Req) ->
+list(_Req) ->
     %% Get the routes in the system
     {ok, Routes} = burbweb_router:get_routes(),
     {ok, [{routes, format_host(Routes)}]}.

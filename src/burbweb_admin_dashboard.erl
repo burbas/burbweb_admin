@@ -1,12 +1,8 @@
 -module(burbweb_admin_dashboard).
 -export([
-         init/0,
-         index/3
+         index/1
         ]).
 
-init() ->
-    html.
-
-index(<<"GET">>, _Path, _Req) ->
+index(_Req) ->
     Memory = erlang:memory(),
     {ok, [{memory, Memory}]}.

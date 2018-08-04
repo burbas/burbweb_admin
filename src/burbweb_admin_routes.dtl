@@ -33,7 +33,7 @@
                                             <td>{{host}}</td>
                                             <td>{{route.app}}</td>
                                             <td>{{route.mod}}</td>
-                                            <td>{{route.func}}</td>
+                                            <td>{{route.func}} <span class="badge badge-primary">{{route.method}}</span></td>
                                             <td>{{route.route}}</td>
                                           </tr>
                                           {% endfor %}
